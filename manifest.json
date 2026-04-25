@@ -1,6 +1,6 @@
 {
-  "name": " Buddhist Era/ බුද්ධ වර්ෂය",
-  "Short_name": "Buddhist Calendar",
+  "name": "Buddhist Era / බුද්ධ වර්ෂය",
+  "short_name": "Buddhist Era",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
