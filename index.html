@@ -1195,19 +1195,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-window.onclick = function(e) { 
-    let myDropdown = document.getElementById("myDropdown");
-    if (myDropdown && !e.target.matches('.menu-dots')) {
-        myDropdown.style.display = "none";
-    }
-    if (e.target.classList.contains('modal')) {
-        e.target.style.display = "none";
-    }
-};
+<script>
+    window.onclick = function(e) { 
+        let myDropdown = document.getElementById("myDropdown");
+        if (myDropdown && !e.target.matches('.menu-dots')) {
+            myDropdown.style.display = "none";
+        }
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = "none";
+        }
+    };
 
-document.addEventListener("DOMContentLoaded", function() {
-    resetToToday();
-});
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof resetToToday === "function") {
+            resetToToday();
+        }
+    });
+</script>
 
 <link rel="manifest" href="manifest.json">
 
@@ -1216,9 +1220,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js')
         .then(reg => console.log('Service Worker: Registered'))
-        .catch(err => console.log(`Service Worker: Error: ${err}`));
+        .catch(err => console.log('Service Worker: Error: ' + err));
     });
   }
 </script>
+
 </body>
 </html>
+
