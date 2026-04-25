@@ -1194,8 +1194,8 @@ document.addEventListener("DOMContentLoaded", function() {
     resetToToday();
 });
 
-
 <script>
+    // Dropdown සහ Modal වසා දැමීමේ කාර්යය
     window.onclick = function(e) { 
         let myDropdown = document.getElementById("myDropdown");
         if (myDropdown && !e.target.matches('.menu-dots')) {
@@ -1206,11 +1206,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    document.addEventListener("DOMContentLoaded", function() {
+    // ඇප් එක විවෘත වූ සැනින් අද දිනය පෙන්වීම
+    window.onload = function() {
         if (typeof resetToToday === "function") {
             resetToToday();
+        } else {
+            console.error("resetToToday function එක සොයාගත නොහැක. කරුණාකර එය ඉහළින් අර්ථ දක්වා ඇත්දැයි බලන්න.");
         }
-    });
+    };
 </script>
 
 <link rel="manifest" href="manifest.json">
