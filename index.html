@@ -444,8 +444,17 @@
         color: #4caf50 !important;
     }
 }
+<link rel="manifest" href="manifest.json">
 
-
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker: Registered'))
+        .catch(err => console.log(`Service Worker: Error: ${err}`));
+    });
+  }
+</script>
 
 </style>
 
